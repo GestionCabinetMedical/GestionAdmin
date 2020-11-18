@@ -5,6 +5,8 @@ package com.controller;
 
 import java.util.List;
 
+import org.springframework.data.repository.NoRepositoryBean;
+
 import com.dto.ResponseDto;
 
 /**
@@ -13,6 +15,7 @@ import com.dto.ResponseDto;
  * @author Maxime Rembert
  *
  */
+@NoRepositoryBean
 public interface IDaoController<E> {
 	
 	/**
