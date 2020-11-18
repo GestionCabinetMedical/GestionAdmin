@@ -5,6 +5,8 @@ package com.service;
 
 import java.util.List;
 
+import org.springframework.data.repository.NoRepositoryBean;
+
 /**
  * Interface service générique responsable des méthodes communes à tout le
  * projet.
@@ -12,6 +14,7 @@ import java.util.List;
  * @author Maxime Rembert
  *
  */
+@NoRepositoryBean
 public interface IDaoService<E> {
 	
 	/**

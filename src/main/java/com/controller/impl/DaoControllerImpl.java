@@ -27,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
-public class DaoControllerImpl<E> implements IDaoController<E>{
+public abstract class DaoControllerImpl<E> implements IDaoController<E>{
 	
 	@Autowired
 	private IDaoService<E> serv;
