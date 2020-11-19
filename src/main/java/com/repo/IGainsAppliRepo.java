@@ -3,6 +3,8 @@
  */
 package com.repo;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Repository;
 
 import com.entity.GainsAppli;
@@ -15,5 +17,13 @@ import com.entity.GainsAppli;
  */
 @Repository
 public interface IGainsAppliRepo extends IDaoRepo<GainsAppli> {
+
+	/**
+	 * Méthdoe permettant la recherche de gain par date.
+	 * 
+	 * @param date Date du gains recherché.
+	 * @return Une entité GainsAppli.
+	 */
+	public GainsAppli findByDate(Date date);
 
 }

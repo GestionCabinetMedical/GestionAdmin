@@ -5,6 +5,7 @@ package com.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,6 +35,6 @@ public class GainsAppli implements Serializable {
 	@Column
 	private float gain;
 	@Column
-	private LocalDate date;
+	private Date date;
 
 }
