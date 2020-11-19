@@ -27,6 +27,6 @@ public interface IGainsAppliService {
 	 * Méthode permettant de calculer le gains de l'appli par jour.
 	 * @return Le gains correspondant au jour.
 	 */
-	public GainsAppli calculGainsByDate(Date date);
+	public GainsAppli calculGainsBySpecialite( String specialite);
 
 }

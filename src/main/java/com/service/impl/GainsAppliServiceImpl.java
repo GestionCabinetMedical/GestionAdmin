@@ -3,12 +3,15 @@
  */
 package com.service.impl;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.entity.Formule;
 import com.entity.GainsAppli;
+import com.repo.IFormuleRepo;
 import com.repo.IGainsAppliRepo;
 import com.service.IGainsAppliService;
 
@@ -27,6 +30,9 @@ public class GainsAppliServiceImpl extends DaoServiceImpl<GainsAppli> implements
 	
 	@Autowired
 	private IGainsAppliRepo repo;
+	
+	@Autowired
+	private IFormuleRepo repoFormule;
 
 	@Override
 	public GainsAppli findByDate(Date date) {
@@ -40,14 +46,23 @@ public class GainsAppliServiceImpl extends DaoServiceImpl<GainsAppli> implements
 	}
 
 	@Override
-	public GainsAppli calculGainsByDate(Date date) {
-		//TODO : a compléter
+	public GainsAppli calculGainsBySpecialite(String specialite) {
 		log.info("Classe gains appli service : méthode calcul gains by date appelée");
-		if (date != null) {
-			log.info("Calcul du gains Ok !");
-			return null;
+		Date date = Calendar.getInstance().getTime();
+		if ( specialite != null) {
+			log.info("Calcul du gains pour la date de "+date+" et la spécialité de "+ specialite+ " OK !");
+			//recup formule par specialite communiqué
+			Formule formule = repoFormule.findBySpecialite(specialite);
+			//recup du gain par date
+			GainsAppli gain = repo.findByDate(date);
+			//ajout des frais services au gain
+			gain.setGain(gain.getGain()+formule.getFraisService());
+			//sauvegarde du gain
+			repo.save(gain);
+			//retour du nouveau gain
+			return gain;
 		}
-		log.warn("Erreur calcul gains by date : date null");
+		log.warn("Erreur calcul gains by date : date null ou specialite null");
 		return null;
 	}
 	

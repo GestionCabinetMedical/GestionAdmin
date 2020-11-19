@@ -13,6 +13,8 @@ import com.dto.ResponseDto;
 import com.entity.Formule;
 import com.service.IFormuleService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Classe controller de Formule implémentant IFormuleController.
  * 
@@ -22,6 +24,7 @@ import com.service.IFormuleService;
 @RestController
 @RequestMapping(path = "/formule")
 @CrossOrigin(allowCredentials = "true", origins = "http://localhost:4200")
+@Slf4j
 public class FormuleControllerImpl extends DaoControllerImpl<Formule>  implements IFormuleController {
 	
 	@Autowired
@@ -29,6 +32,7 @@ public class FormuleControllerImpl extends DaoControllerImpl<Formule>  implement
 
 	@Override
 	public ResponseDto<Formule> findBySpecialite(String specialite) {
+		log.info("Classe formule controller : méthode find by specialite appelée !");
 		return makeDtoResponse(serv.findBySpecialite(specialite));
 	}
 

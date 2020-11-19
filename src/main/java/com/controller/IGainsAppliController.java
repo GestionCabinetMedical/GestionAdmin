@@ -29,9 +29,10 @@ public interface IGainsAppliController {
 	/**
 	 * Méthdoe permettant de calculer le gains de l'appli par date.
 	 * @param date Date du gains à calculer.
-	 * @return Un responseDto composé d'un booleen error, un body (=entite) et d'un
+	 * @param specialite Specialite du médecin.
+	 * @return Un responseDto composé d'un booleen error, un body (=GainsAppli) et d'un
 	 *         status http (200 ou 400).
 	 */
-	public ResponseDto<GainsAppli> calculGainsByDate(Date date);
+	public ResponseDto<GainsAppli> calculGainsBySpecialite(String specialite);
 
 }

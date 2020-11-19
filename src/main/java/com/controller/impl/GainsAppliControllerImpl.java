@@ -6,7 +6,9 @@ package com.controller.impl;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +30,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @RestController
 @RequestMapping (path="/gainsApi")
+@CrossOrigin(allowCredentials = "true", origins = "http://localhost:4200")
 @Slf4j
 public class GainsAppliControllerImpl extends DaoControllerImpl<GainsAppli> implements IGainsAppliController {
 	
@@ -37,13 +40,15 @@ public class GainsAppliControllerImpl extends DaoControllerImpl<GainsAppli> impl
 	@Override
 	@GetMapping (path="/date")
 	public ResponseDto<GainsAppli> findByDate(@RequestParam Date date) {
-		log.info("Classe gains appli controller : méthdoe find by date appelée");
+		log.info("Classe gains appli controller : méthode find by date appelée");
 		return makeDtoResponse(serv.findByDate(date));
 	}
 
 	@Override
-	public ResponseDto<GainsAppli> calculGainsByDate(Date date) {
-		return makeDtoResponse(serv.calculGainsByDate(date));
+	@PostMapping (path="/ajoutGains")
+	public ResponseDto<GainsAppli> calculGainsBySpecialite(@RequestParam String specialite) {
+		log.info("Classe gains appli controller : méthode calcul gain by date and specialite appelée");
+		return makeDtoResponse(serv.calculGainsBySpecialite( specialite));
 	}
 
 }
