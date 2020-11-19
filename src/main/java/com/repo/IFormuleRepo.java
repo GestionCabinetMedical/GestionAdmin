@@ -3,6 +3,8 @@
  */
 package com.repo;
 
+import org.springframework.stereotype.Repository;
+
 import com.entity.Formule;
 
 /**
@@ -11,6 +13,7 @@ import com.entity.Formule;
  * @author Maxime Rembert
  *
  */
+@Repository
 public interface IFormuleRepo extends IDaoRepo<Formule> {
 
 	/**

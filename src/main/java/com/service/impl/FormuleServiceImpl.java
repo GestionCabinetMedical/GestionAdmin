@@ -3,8 +3,6 @@
  */
 package com.service.impl;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +13,8 @@ import com.service.IFormuleService;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Classe service de formule implémentant IFormuleService.
+ * Classe service de formule étendant DaoServiceImpl et implémentant les
+ * méthodes de IFormuleService.
  * 
  * @author Maxime Rembert
  *
@@ -37,7 +36,5 @@ public class FormuleServiceImpl extends DaoServiceImpl<Formule> implements IForm
 		log.warn("Erreur methode find By Specialite : specialite null !");
 		return null;
 	}
-
-
 
 }

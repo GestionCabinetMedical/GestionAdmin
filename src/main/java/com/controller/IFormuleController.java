@@ -8,12 +8,12 @@ import com.entity.Formule;
 
 /**
  * Interface controller de formule responsables des méthodes spéciales à cette
- * entité. Elle étend IDaoController.
+ * entité.
  * 
  * @author Maxime Rembert
  *
  */
-public interface IFormuleController extends IDaoController<Formule> {
+public interface IFormuleController {
 	
 	public ResponseDto<Formule> findBySpecialite(String specialite);
 	
