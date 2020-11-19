@@ -37,4 +37,6 @@ public class Formule implements Serializable{
 	private float fraisService;
 	@Column
 	private float prixTtc;
+	@Column
+	private String specialite;
 }

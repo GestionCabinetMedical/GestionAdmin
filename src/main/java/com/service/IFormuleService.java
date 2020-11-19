@@ -14,4 +14,12 @@ import com.entity.Formule;
  */
 public interface IFormuleService extends IDaoService<Formule> {
 
+	/**
+	 * Méthode permettant de rechercher une formule par spécialite.
+	 * 
+	 * @param specialite Specialite du medecin.
+	 * @return Une entité Formule.
+	 */
+	public Formule findBySpecialite(String specialite);
+
 }
