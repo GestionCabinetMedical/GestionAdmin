@@ -7,12 +7,14 @@ import java.util.List;
 
 import org.apache.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.controller.IDaoController;
 import com.dto.ResponseDto;
@@ -27,6 +29,8 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
+@RequestMapping
+@CrossOrigin(allowCredentials = "true", origins = "http://localhost:4200")
 public abstract class DaoControllerImpl<E> implements IDaoController<E>{
 	
 	@Autowired

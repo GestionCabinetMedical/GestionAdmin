@@ -4,6 +4,7 @@
 package com.entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +17,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Classe entité de Formule.
+ * Classe de l'entité GainsAppli
+ * 
  * @author Maxime Rembert
  *
  */
@@ -24,19 +26,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Formule implements Serializable{
+public class GainsAppli implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column
-	private float taxe;
+	private float gain;
 	@Column
-	private float prixConsultation;
-	@Column
-	private float fraisService;
-	@Column
-	private float prixTtc;
-	@Column
-	private String specialite;
+	private LocalDate date;
+
 }

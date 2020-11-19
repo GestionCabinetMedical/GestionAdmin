@@ -7,11 +7,19 @@ import com.entity.Formule;
 
 /**
  * Interface service de Formule responsable des méthodes spéciales à cette
- * entité. Elle étend l'interface IDaoService.
+ * entité.
  * 
  * @author Maxime Rembert
  *
  */
-public interface IFormuleService extends IDaoService<Formule> {
+public interface IFormuleService {
+
+	/**
+	 * Méthode permettant de rechercher une formule par spécialite.
+	 * 
+	 * @param specialite Specialite du medecin.
+	 * @return Une entité Formule.
+	 */
+	public Formule findBySpecialite(String specialite);
 
 }
