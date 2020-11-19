@@ -29,9 +29,9 @@ public class GainsMedecin {
 	private Long idGainsMedecin;
 	@Column(name="GAINS", unique = false, nullable = true)
 	private float gains;
-	@Column(name="DATE", unique = true, nullable = false)
+	@Column(name="DATE")
 	private Date date;
-	@Column(name="ID_MEDECIN", unique = true, nullable = false)
+	@Column(name="ID_MEDECIN", unique = true, nullable = true)
 	private Long idMedecin;
 
 }

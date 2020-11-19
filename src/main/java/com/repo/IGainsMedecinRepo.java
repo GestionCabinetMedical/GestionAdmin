@@ -23,13 +23,5 @@ public interface IGainsMedecinRepo extends IDaoRepo<GainsMedecin>{
 	 * @return Une entité GainsMedecin.
 	 */
 	public GainsMedecin findByDateAndIdMedecin(Date date, Long idMedecin);
-	
-	/**
-	 * Méthdoe permettant le calcul des gains d'un medecin après une consultation pour une journée (date du jour).
-	 * 
-	 * @param idMedecin Long du médecin dont on souhaite calculer les gains
-	 * @return void: pas de retour. Modification de l'attribut "gains" une fois l'entité GainsMedecin adéquate récupérée
-	 */
-	public void calculGainsMedecin(Long idMedecin);
 
 }

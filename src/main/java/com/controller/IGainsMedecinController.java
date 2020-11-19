@@ -6,16 +6,15 @@ package com.controller;
 import java.util.Date;
 
 import com.dto.ResponseDto;
-import com.entity.GainsAppli;
 import com.entity.GainsMedecin;
 
 /**
  * @author Pauline Humbert
  * 
- *  Interface controller de GainsMedecin redéfinition des méthodes spéciales à cette entité.
+ *  Interface controller de GainsMedecin redéfinition des méthodes spéciales à cette entité et étend de IDaoController.
  *
  */
-public interface IGainsMedecinController {
+public interface IGainsMedecinController extends IDaoController<GainsMedecin>{
 	
 	/**
 	 * Méthdoe permettant la recherche des gains d'un par date et par medecin.

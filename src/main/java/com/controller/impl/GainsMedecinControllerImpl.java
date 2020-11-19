@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @RestController
-@RequestMapping (path="/gainsMedecin")
+@RequestMapping(path="/gainsMedecin")
 @Slf4j
 public class GainsMedecinControllerImpl extends DaoControllerImpl<GainsMedecin> implements IGainsMedecinController{
 	
