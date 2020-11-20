@@ -8,16 +8,16 @@ import javassist.NotFoundException;
 /**
  * @author Pauline Humbert
  * 
- * Classe exception de Formule si elle n'est pas trouvée. Elle étend de NotFoundException
+ * Classe exception de dao si l'entité générique n'est pas trouvée. Elle étend de NotFoundException
  *
  */
-public class FormuleNotFoundException extends NotFoundException{
-
+public class DaoNotFoundException extends NotFoundException {
+	
 	/**
 	 * Constructeur de l'exception avec le message indiqué au niveau de l'appel à l'exception dans le service
 	 * @param msg
 	 */
-	public FormuleNotFoundException(String msg) {
+	public DaoNotFoundException(String msg) {
 		super(msg);
 		// TODO Auto-generated constructor stub
 	}

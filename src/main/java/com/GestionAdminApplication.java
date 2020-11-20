@@ -10,6 +10,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 
 import com.entity.GainsMedecin;
+import com.exception.notmodify.DaoNotModifyException;
 import com.service.impl.GainsMedecinServiceImpl;
 
 /**
@@ -38,7 +39,12 @@ public class GestionAdminApplication {
 			Stream.of(new GainsMedecin(1L, 400, Date.valueOf("2020-05-03"), 1L),
 					new GainsMedecin(2L, 1000, Date.valueOf("2020-05-04"), 2L))
 					.forEach((gains) -> {
-						gainsMedecinService.addOrUpdate(gains);
+						try {
+							gainsMedecinService.addOrUpdate(gains);
+						} catch (DaoNotModifyException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					});
 			gainsMedecinService.findAll().forEach(System.out::println);
 		};

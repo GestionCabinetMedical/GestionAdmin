@@ -8,7 +8,7 @@ import javassist.NotFoundException;
 /**
  * @author Pauline Humbert
  * 
- * Classe exception de MedecinDto s'il n'est pas trouvé. Il étend de NotFoundException
+ * Classe exception de MedecinDto s'il n'est pas trouvée. Elle étend de NotFoundException
  *
  */
 public class MedecinDtoNotFoundException extends NotFoundException{

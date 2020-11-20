@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.dto.MedecinDto;
+import com.exception.notfound.MedecinDtoNotFoundException;
 
 /**
  * 
@@ -22,6 +23,6 @@ import com.dto.MedecinDto;
 public interface IMedecinConsommateur {
 	
 	@GetMapping(value="/medecin/{id}")
-	MedecinDto findMedecinById(@PathVariable("id") Long id);
+	MedecinDto findMedecinById(@PathVariable("id") Long id) throws MedecinDtoNotFoundException;
 
 }
