@@ -16,13 +16,16 @@ import com.exception.notfound.GainsAppliNotFoundException;
 import com.exception.notsuccess.GainsAppliNotSuccessException;
 import com.repo.IFormuleRepo;
 import com.repo.IGainsAppliRepo;
+import com.service.IFormuleService;
 import com.service.IGainsAppliService;
 
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Classe service de GainsAppli étendant DaoServiceImpl et implémenant les méthodes
- * de IGainsAppliService.
+ * Classe service de GainsAppli étendant {@code DaoServiceImpl} et implémenant les méthodes
+ * de {code IGainsAppliService}.
+ * @see DaoServiceImpl
+ * @see IGainsAppliService
  * 
  * @author Maxime rembert
  *

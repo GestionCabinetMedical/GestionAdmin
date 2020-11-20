@@ -1,5 +1,6 @@
 package com.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -16,12 +17,13 @@ import lombok.NoArgsConstructor;
  * @author Pauline Humbert
  *
  * Classe de l'entité GainsMedecin pour les gains des médecins
+ * @see Serializable
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class GainsMedecin {
+public class GainsMedecin implements Serializable{
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)

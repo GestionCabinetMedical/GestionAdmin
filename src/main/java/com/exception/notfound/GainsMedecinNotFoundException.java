@@ -8,7 +8,8 @@ import javassist.NotFoundException;
 /**
  * @author Pauline Humbert
  * 
- *  Classe exception de GainsMedecin s'il n'est pas trouvée. Elle étend de NotFoundException
+ *  Classe exception de GainsMedecin s'il n'est pas trouvée. Elle étend de {@code NotFoundException}
+ * @see NotFoundException
  *
  */
 public class GainsMedecinNotFoundException extends NotFoundException{

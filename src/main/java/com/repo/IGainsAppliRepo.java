@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.repo;
 
 import java.util.Date;
@@ -10,7 +7,8 @@ import org.springframework.stereotype.Repository;
 import com.entity.GainsAppli;
 
 /**
- * Interface repository de l'entité GainsAppli. Elle étend IDaoRepo.
+ * Interface repository de l'entité GainsAppli. Elle étend {@code IDaoRepo}.
+ * @see IDaoRepo
  * 
  * @author Maxime Rembert
  *

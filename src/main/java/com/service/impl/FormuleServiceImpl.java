@@ -9,13 +9,16 @@ import org.springframework.stereotype.Service;
 import com.entity.Formule;
 import com.exception.notfound.FormuleNotFoundException;
 import com.repo.IFormuleRepo;
+import com.service.IDaoService;
 import com.service.IFormuleService;
 
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Classe service de formule étendant DaoServiceImpl et implémentant les
- * méthodes de IFormuleService.
+ * Classe service de formule étendant {@code DaoServiceImpl} et implémentant les
+ * méthodes de {@code IFormuleService}.
+ * @see DaoServiceImpl
+ * @see IFormuleService
  * 
  * @author Maxime Rembert
  *

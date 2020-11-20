@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.controller.IDaoController;
 import com.controller.IFormuleController;
 import com.dto.ResponseDto;
 import com.entity.Formule;
@@ -17,7 +18,8 @@ import com.service.IFormuleService;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Classe controller de Formule implémentant IFormuleController.
+ * Classe controller de Formule étendant de {@code DaoControllerImpl}.
+ * @see DaoControllerImpl
  * 
  * @author Maxime Rembert
  *
@@ -37,6 +39,7 @@ public class FormuleControllerImpl extends DaoControllerImpl<Formule>  implement
 	
 	@Override
 	public ResponseDto<Formule> findBySpecialite(String specialite) throws FormuleNotFoundException {
+		
 		log.info("Classe formule controller : méthode find by specialite appelée !");
 		return makeDtoResponse(serv.findBySpecialite(specialite));
 	}

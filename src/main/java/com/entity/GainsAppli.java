@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.entity;
 
 import java.io.Serializable;
@@ -18,7 +15,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * Classe de l'entité GainsAppli
- * 
+ * @see Serializable
  * @author Maxime Rembert
  *
  */
@@ -30,10 +27,11 @@ public class GainsAppli implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column(name="ID_GAINS_APPLI", unique = true, nullable = false)
 	private Long id;
-	@Column
+	@Column(name="GAIN", unique = false, nullable = false)
 	private float gain;
-	@Column
+	@Column(name="DATE", unique = true, nullable = false)
 	private Date date;
 
 }

@@ -27,8 +27,9 @@ import lombok.extern.slf4j.Slf4j;
  * @author Pauline Humbert
  * 
  * Classe controller de GainsMedecin implémente des méthodes spéciales à cette entité. 
- * Elle étend de DaoControllerImpl et implémente les méthodes de IGainsMedecinController.
- *
+ * Elle étend de {@code DaoControllerImpl}.
+ * @see DaoControllerImpl
+ * 
  */
 @RestController
 @RequestMapping(path="/gainsMedecin")

@@ -16,6 +16,7 @@ import com.exception.notfound.MedecinDtoNotFoundException;
 import com.exception.notsuccess.GainsMedecinNotSuccessException;
 import com.repo.IFormuleRepo;
 import com.repo.IGainsMedecinRepo;
+import com.service.IFormuleService;
 import com.service.IGainsMedecinService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -23,7 +24,9 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * @author Pauline Humbert
  *
- * Classe service de GainsMédecin qui étend de DaoServiceImpl implémente IGainsMedecinService.
+ * Classe service de GainsMédecin qui étend de {@code DaoServiceImpl} implémente {@code IGainsMedecinService}.
+ * @see DaoServiceImpl
+ * @see IGainsMedecinService
  *
  */
 @Service

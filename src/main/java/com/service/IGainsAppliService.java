@@ -12,12 +12,13 @@ import com.exception.notsuccess.GainsAppliNotSuccessException;
 
 /**
  * Interface service de GainsAppli responsable des méthodes spéciales à
- * GainsAppli.
+ * GainsAppli. Elle étend de {@code IDaoService}
+ * @see IDaoService
  * 
  * @author Maxime Rembert
  *
  */
-public interface IGainsAppliService {
+public interface IGainsAppliService extends IDaoService<GainsAppli>{
 
 	/**
 	 * Méthdoe permettant la recherche de gain par date.

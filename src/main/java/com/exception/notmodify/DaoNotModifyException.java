@@ -5,7 +5,8 @@ package com.exception.notmodify;
  * @author Pauline Humbert
  * 
  * Classe exception de Dao si l'ajout et la modification de l'entité générique n'est pas réalisée au sein du service générique .
- * Elle étend de Throwable
+ * Elle étend de {@code Throwable}
+ * @see Throwable
  *
  */
 public class DaoNotModifyException extends Throwable{

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.controller.impl;
 
 import java.util.Date;
@@ -25,8 +22,8 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * Classe controller de GainsAppli responsables des méthodes spéciales à cette
- * entité. Elle étend DaoControllerImpl et implément les méthodes de
- * IGainsContronner.
+ * entité. Elle étend {@code DaoControllerImpl}.
+ * @see DaoControllerImpl
  * 
  * @author Maxime Rembert
  *

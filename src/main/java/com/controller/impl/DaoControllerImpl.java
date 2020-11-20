@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.controller.impl;
 
 import java.util.List;
@@ -26,7 +23,8 @@ import com.service.IDaoService;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Classe controller générique implémentant IDaoController.
+ * Classe controller générique implémentant {@code IDaoController}.
+ * @see IDaoController
  * 
  * @author Maxime Rembert
  *
@@ -86,10 +84,12 @@ public abstract class DaoControllerImpl<E> implements IDaoController<E>{
 	public ResponseDto<E> makeDtoResponse(E e) {
 		ResponseDto<E> resp = new ResponseDto<>();
 		if (e != null) {
+			log.info("makeDtoResponse : responseDto Ok");
 			resp.setBody(e);
 			resp.setError(false);
 			resp.setStatus(HttpStatus.SC_OK);
 		} else {
+			log.info("makeDtoResponse : responseDto Erreur");
 			resp.setError(true);
 			resp.setBody(null);
 			resp.setStatus(HttpStatus.SC_BAD_REQUEST);
@@ -102,10 +102,12 @@ public abstract class DaoControllerImpl<E> implements IDaoController<E>{
 		ResponseDto<Boolean> resp = new ResponseDto<>();
 
 		if (status) {
+			log.info("makeDtoResponse : responseDto Ok");
 			resp.setError(false);
 			resp.setBody(null);
 			resp.setStatus(HttpStatus.SC_OK);
 		} else {
+			log.info("makeDtoResponse : responseDto Erreur");
 			resp.setError(true);
 			resp.setBody(null);
 			resp.setStatus(HttpStatus.SC_BAD_REQUEST);
@@ -118,10 +120,12 @@ public abstract class DaoControllerImpl<E> implements IDaoController<E>{
 		ResponseDto<List<E>> resp = new ResponseDto<>();
 		
 		if (liste != null) {
+			log.info("makeDtoResponse : responseDto Ok");
 			resp.setError(false);
 			resp.setBody(liste);
 			resp.setStatus(HttpStatus.SC_OK);
 		} else {
+			log.info("makeDtoResponse : responseDto Erreur");
 			resp.setError(true);
 			resp.setBody(null);
 			resp.setStatus(HttpStatus.SC_BAD_REQUEST);

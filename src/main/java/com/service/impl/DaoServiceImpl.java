@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.service.impl;
 
 import java.util.List;
@@ -16,7 +13,8 @@ import com.service.IDaoService;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Classe service générique implémentant IDaoService.
+ * Classe service générique implémentant {@code IDaoService}.
+ * @see IDaoService
  * 
  * @author Maxime Rembert
  *
