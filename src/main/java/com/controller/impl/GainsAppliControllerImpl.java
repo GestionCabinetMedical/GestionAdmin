@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.controller.IGainsAppliController;
 import com.dto.ResponseDto;
 import com.entity.GainsAppli;
+import com.exception.notfound.FormuleNotFoundException;
+import com.exception.notfound.GainsAppliNotFoundException;
+import com.exception.notsuccess.GainsAppliNotSuccessException;
 import com.service.IGainsAppliService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -43,14 +46,14 @@ public class GainsAppliControllerImpl extends DaoControllerImpl<GainsAppli> impl
 	
 	@Override
 	@GetMapping (path="/date")
-	public ResponseDto<GainsAppli> findByDate(@RequestParam Date date) {
+	public ResponseDto<GainsAppli> findByDate(@RequestParam Date date) throws GainsAppliNotFoundException {
 		log.info("Classe gains appli controller : méthode find by date appelée");
 		return makeDtoResponse(serv.findByDate(date));
 	}
 
 	@Override
 	@PostMapping (path="/ajoutGains")
-	public ResponseDto<GainsAppli> calculGainsBySpecialite(@RequestParam String specialite) {
+	public ResponseDto<GainsAppli> calculGainsBySpecialite(@RequestParam String specialite) throws FormuleNotFoundException, GainsAppliNotFoundException, GainsAppliNotSuccessException {
 		log.info("Classe gains appli controller : méthode calcul gain by date and specialite appelée");
 		return makeDtoResponse(serv.calculGainsBySpecialite( specialite));
 	}

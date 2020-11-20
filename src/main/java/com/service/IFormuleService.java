@@ -4,6 +4,7 @@
 package com.service;
 
 import com.entity.Formule;
+import com.exception.notfound.FormuleNotFoundException;
 
 /**
  * Interface service de Formule responsable des méthodes spéciales à cette
@@ -19,7 +20,8 @@ public interface IFormuleService {
 	 * 
 	 * @param specialite Specialite du medecin.
 	 * @return Une entité Formule.
+	 * @throws FormuleNotFoundException 
 	 */
-	public Formule findBySpecialite(String specialite);
+	public Formule findBySpecialite(String specialite) throws FormuleNotFoundException;
 
 }

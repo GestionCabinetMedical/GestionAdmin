@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.controller.IFormuleController;
 import com.dto.ResponseDto;
 import com.entity.Formule;
+import com.exception.notfound.FormuleNotFoundException;
 import com.service.IFormuleService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -35,7 +36,7 @@ public class FormuleControllerImpl extends DaoControllerImpl<Formule>  implement
 	// METHODES
 	
 	@Override
-	public ResponseDto<Formule> findBySpecialite(String specialite) {
+	public ResponseDto<Formule> findBySpecialite(String specialite) throws FormuleNotFoundException {
 		log.info("Classe formule controller : méthode find by specialite appelée !");
 		return makeDtoResponse(serv.findBySpecialite(specialite));
 	}

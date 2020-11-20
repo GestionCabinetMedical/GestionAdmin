@@ -90,18 +90,17 @@ public class GainsMedecinServiceImpl extends DaoServiceImpl<GainsMedecin> implem
 					log.warn("Erreur calculGainsMedecin : formuleToFindPrixConsult=null");
 					throw new FormuleNotFoundException("Formule pas trouvé (=null)");
 				}
-				float newGain = gainsMedecin.getGains() + formuleToFindPrixConsult.getPrixConsultation();
+				float newGain = gainsMedecin.getGains()+formuleToFindPrixConsult.getPrixConsultation();
 				gainsMedecin.setGains(newGain);
-				if (gainsMedecin.getGains() == newGain) {
-					gainMedecinRepo.save(gainsMedecin);
-					log.info("Calcul du gains Ok !");
-					log.info("Le nouveau gain de la journée du medecin " + idMedecin + " est de " + gainsMedecin.getGains());
-					return gainsMedecin;
-				}
-				else {
+				if (gainsMedecin.getGains() != newGain) {
 					log.warn("Erreur calculGainsMedecin : gains de GainsMedecin pas modifié");
-					throw new GainsMedecinNotSuccessException("GainsMedecin n'a pas modifié le nouveau gains");
+					throw new GainsMedecinNotSuccessException("GainsMedecin n'a pas modifié le nouveau attribut gains");
 				}
+				gainMedecinRepo.save(gainsMedecin);
+				log.info("Calcul du gains Ok !");
+				log.info("Le nouveau gain de la journée du medecin " + idMedecin + " est de " + gainsMedecin.getGains());
+				return gainsMedecin;
+				
 			} else {
 				log.warn("Erreur calculGainsMedecin : idMedecin=null");
 				throw new GainsMedecinNotFoundException("GainsMedecin pas trouvé idMedecin = null");

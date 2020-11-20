@@ -6,6 +6,9 @@ package com.service;
 import java.util.Date;
 
 import com.entity.GainsAppli;
+import com.exception.notfound.FormuleNotFoundException;
+import com.exception.notfound.GainsAppliNotFoundException;
+import com.exception.notsuccess.GainsAppliNotSuccessException;
 
 /**
  * Interface service de GainsAppli responsable des méthodes spéciales à
@@ -21,15 +24,19 @@ public interface IGainsAppliService {
 	 * 
 	 * @param date Date du gains recherché.
 	 * @return Une entité GainsAppli.
+	 * @throws GainsAppliNotFoundException 
 	 */
-	public GainsAppli findByDate(Date date);
+	public GainsAppli findByDate(Date date) throws GainsAppliNotFoundException;
 
 	/**
 	 * Méthode permettant de calculer le gains de l'appli par jour. * @param
 	 * specialite Specialite du Medecin.
 	 * 
 	 * @return Le gains correspondant au jour.
+	 * @throws GainsAppliNotSuccessException 
+	 * @throws GainsAppliNotFoundException 
+	 * @throws FormuleNotFoundException 
 	 */
-	public GainsAppli calculGainsBySpecialite(String specialite);
+	public GainsAppli calculGainsBySpecialite(String specialite) throws FormuleNotFoundException, GainsAppliNotFoundException, GainsAppliNotSuccessException;
 
 }
