@@ -27,9 +27,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class FormuleControllerImpl extends DaoControllerImpl<Formule>  implements IFormuleController {
 	
+	// ATTRIBUTS
+	
 	@Autowired
 	private IFormuleService serv;
 
+	// METHODES
+	
 	@Override
 	public ResponseDto<Formule> findBySpecialite(String specialite) {
 		log.info("Classe formule controller : méthode find by specialite appelée !");

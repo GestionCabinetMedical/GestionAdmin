@@ -21,9 +21,14 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DaoServiceImpl<E> implements IDaoService<E>{
 	
+	//ATTRIBUTS
+	
 	@Autowired
 	private IDaoRepo<E> repo;
 
+	
+	//METHODES
+	
 	@Override
 	public E addOrUpdate(E entite) {
 		log.info("Servcie générique : méthode add Or Update appelée ");

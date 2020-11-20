@@ -28,12 +28,16 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class GainsAppliServiceImpl extends DaoServiceImpl<GainsAppli> implements IGainsAppliService{
 	
+	// ATTRIBUTS 
+	
 	@Autowired
 	private IGainsAppliRepo repo;
 	
 	@Autowired
 	private IFormuleRepo repoFormule;
 
+	// METHODES
+	
 	@Override
 	public GainsAppli findByDate(Date date) {
 		log.info("Classe gains appli service : méthode find by date appelée");

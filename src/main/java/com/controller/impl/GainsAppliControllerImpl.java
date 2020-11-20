@@ -34,9 +34,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class GainsAppliControllerImpl extends DaoControllerImpl<GainsAppli> implements IGainsAppliController {
 	
+	// ATTRIBUTS
+	
 	@Autowired
 	private IGainsAppliService serv;
 
+	// METHODES
+	
 	@Override
 	@GetMapping (path="/date")
 	public ResponseDto<GainsAppli> findByDate(@RequestParam Date date) {

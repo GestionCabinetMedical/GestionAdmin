@@ -23,9 +23,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class FormuleServiceImpl extends DaoServiceImpl<Formule> implements IFormuleService {
 
+	// ATTRIBUTS
+	
 	@Autowired
 	private IFormuleRepo repo;
 
+	// METHODES
+	
 	@Override
 	public Formule findBySpecialite(String specialite) {
 		log.info("Classe Formule service : Méthode findBySpecialite appelée");

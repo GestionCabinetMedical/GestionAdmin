@@ -33,9 +33,13 @@ import lombok.extern.slf4j.Slf4j;
 @CrossOrigin(allowCredentials = "true", origins = "http://localhost:4200")
 public abstract class DaoControllerImpl<E> implements IDaoController<E>{
 	
+	// ATTRIBUTS 
+	
 	@Autowired
 	private IDaoService<E> serv;
 
+	// METHODES
+	
 	@Override
 	@PostMapping
 	public ResponseDto<E> add(@RequestBody E entite) {
