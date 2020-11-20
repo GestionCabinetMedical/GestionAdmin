@@ -7,6 +7,7 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,13 +38,15 @@ public class GainsMedecinControllerImpl extends DaoControllerImpl<GainsMedecin> 
 	@GetMapping (path="/date")
 	public ResponseDto<GainsMedecin> findByDateAndIdMedecin(@RequestParam Date date, @RequestParam Long idMedecin) {
 		// TODO Auto-generated method stub
-		log.info("Classe gains medecin controller : méthdoe find by date by idMedecin appelée");		
+		log.info("Classe gains medecin controller : méthdoe findByDateAndIdMedecin appelée");		
 		return makeDtoResponse(gainsMedecinService.findByDateAndIdMedecin(date, idMedecin));
 	}
 
 	@Override
-	public ResponseDto<GainsMedecin> calculGainsMedecin(Long idMedecin) {
+	@PostMapping (path="/ajoutGainsMedecin")
+	public ResponseDto<GainsMedecin> calculGainsMedecin(@RequestParam Long idMedecin) {
 		// TODO Auto-generated method stub
+		log.info("Classe gains appli controller : méthode calculGainsMedecin appelée");
 		return makeDtoResponse(gainsMedecinService.calculGainsMedecin(idMedecin));
 	}
 
