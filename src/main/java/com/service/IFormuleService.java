@@ -1,14 +1,11 @@
-/**
- * 
- */
 package com.service;
 
 import com.entity.Formule;
 import com.exception.notfound.FormuleNotFoundException;
 
 /**
- * Interface service de Formule responsable des méthodes spéciales à cette
- * entité. Elle étend de {@code IDaoService}
+ * Interface service {@code IFormuleService} spécifique de {@link Formule}.
+ * Elle étend de {@code IDaoService}
  * @see IDaoService
  * 
  * @author Maxime Rembert

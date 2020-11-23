@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.exception.notfound;
 
 import javassist.NotFoundException;
@@ -8,7 +5,7 @@ import javassist.NotFoundException;
 /**
  * @author Pauline Humbert
  * 
- * Classe exception de MedecinDto s'il n'est pas trouvée. Elle étend de {@code NotFoundException}
+ * Classe exception {@code MedecinDtoNotFoundException} s'il n'est pas trouvée. Elle étend de {@code NotFoundException}
  * @see NotFoundException
  *
  */

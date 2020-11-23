@@ -11,7 +11,7 @@ import com.exception.notsuccess.GainsMedecinNotSuccessException;
 /**
  * @author Pauline Humbert
  *
- * Interface service de GainsMedecin responsable des méthodes spécifiques à GainsMedecin.
+ * Interface service {@code IGainsMedecinService} spécifique de {@link GainsMedecin}
  *  Elle étend de {@code IDaoService}
  * @see IDaoService
  */

@@ -11,8 +11,8 @@ import com.exception.notfound.GainsAppliNotFoundException;
 import com.exception.notsuccess.GainsAppliNotSuccessException;
 
 /**
- * Interface service de GainsAppli responsable des méthodes spéciales à
- * GainsAppli. Elle étend de {@code IDaoService}
+ * Interface service {@code IGainsAppliService} spécifique de {@link GainsAppli}.
+ * Elle étend de {@code IDaoService}
  * @see IDaoService
  * 
  * @author Maxime Rembert

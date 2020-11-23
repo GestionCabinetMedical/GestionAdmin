@@ -1,8 +1,6 @@
 package com.service.impl;
 
 import java.util.Date;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +14,6 @@ import com.exception.notfound.MedecinDtoNotFoundException;
 import com.exception.notsuccess.GainsMedecinNotSuccessException;
 import com.repo.IFormuleRepo;
 import com.repo.IGainsMedecinRepo;
-import com.service.IFormuleService;
 import com.service.IGainsMedecinService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +21,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * @author Pauline Humbert
  *
- * Classe service de GainsMédecin qui étend de {@code DaoServiceImpl} implémente {@code IGainsMedecinService}.
+ * Classe service {@code GainsMedecinServiceImpl} spécifique de {@link GainsMedecin}
+ * qui étend de {@code DaoServiceImpl} et implémente {@code IGainsMedecinService}.
  * @see DaoServiceImpl
  * @see IGainsMedecinService
  *

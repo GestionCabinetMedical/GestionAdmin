@@ -20,8 +20,8 @@ import com.service.IGainsAppliService;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Classe controller de GainsAppli responsables des méthodes spéciales à cette
- * entité. Elle étend {@code DaoControllerImpl}.
+ * Classe controller {@code GainsAppliControllerImpl} spécifique de {@link GainsAppli}.
+ * Elle étend {@code DaoControllerImpl}.
  * @see DaoControllerImpl
  * 
  * @author Maxime Rembert

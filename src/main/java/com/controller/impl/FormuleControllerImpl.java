@@ -13,7 +13,7 @@ import com.service.IFormuleService;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Classe controller de Formule responsable des méthodes spéciales à cette entité,
+ * Classe controller {@code FormuleControllerImpl} spécifique de {@link Formule},
  * et qui étend de {@code DaoControllerImpl}, 
  * @see DaoControllerImpl
  * 

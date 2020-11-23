@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,14 +6,13 @@ import org.springframework.stereotype.Service;
 import com.entity.Formule;
 import com.exception.notfound.FormuleNotFoundException;
 import com.repo.IFormuleRepo;
-import com.service.IDaoService;
 import com.service.IFormuleService;
 
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Classe service de formule étendant {@code DaoServiceImpl} et implémentant les
- * méthodes de {@code IFormuleService}.
+ * Classe service {@code FormuleServiceImpl} spécifique de {@link Formule}
+ * qui étend de {@code DaoServiceImpl} et implémente les méthodes de {@code IFormuleService}.
  * @see DaoServiceImpl
  * @see IFormuleService
  * 

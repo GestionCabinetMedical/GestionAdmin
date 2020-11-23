@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 import com.entity.GainsAppli;
 
 /**
- * Interface repository de l'entité GainsAppli. Elle étend {@code IDaoRepo}.
+ * Interface repository {@code IGainsAppliRepo} spécifique de {@link GainsAppli}. 
+ * Elle étend {@code IDaoRepo}.
  * @see IDaoRepo
  * 
  * @author Maxime Rembert

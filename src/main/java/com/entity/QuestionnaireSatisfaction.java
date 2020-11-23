@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 /**
  * @author Pauline Humbert
  * 
- * Classe entité de Questionnaire de satisfaction
+ * Classe entité de {@code QuestionnaireSatisfaction} qui implémente {@code Serializable}.
  * @see Serializable
  */
 @Data

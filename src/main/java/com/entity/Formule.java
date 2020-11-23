@@ -16,7 +16,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Classe entité de Formule.
+ * Classe entité de {@code Formule} qui implémente {@code Serializable}.
  * @see Serializable
  * @author Maxime Rembert
  *

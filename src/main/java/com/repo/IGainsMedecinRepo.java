@@ -9,7 +9,7 @@ import com.entity.GainsMedecin;
 /**
  * @author Pauline Humbert
  * 
- * Interface repository de l'entité GainsMedecin qui étend de {@code IDaoRepo}.
+ * Interface repository {@code IGainsMedecinRepo} spécifique de {@link GainsMedecin} qui étend de {@code IDaoRepo}.
  * @see IDaoRepo
  *
  */

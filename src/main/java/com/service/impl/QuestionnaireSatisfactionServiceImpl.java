@@ -6,7 +6,6 @@ package com.service.impl;
 import org.springframework.stereotype.Service;
 
 import com.entity.QuestionnaireSatisfaction;
-import com.service.IFormuleService;
 import com.service.IQuestionnaireSatisfactionService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * @author Pauline Humbert
  * 
- * Classe service de QuestionnaireSatisfaction qui étend de {@code DaoServiceImpl} implémente {@code IQuestionnaireSatisfactionService}.
+ * Classe service {@code QuestionnaireSatisfactionServiceImpl} spécifique de {@link QuestionnaireSatisfaction}
+ * qui étend de {@code DaoServiceImpl} et implémente {@code IQuestionnaireSatisfactionService}.
  * @see DaoServiceImpl
  * @see IQuestionnaireSatisfactionService
  *

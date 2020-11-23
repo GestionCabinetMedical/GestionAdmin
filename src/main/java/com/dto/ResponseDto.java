@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.dto;
 
 import lombok.AllArgsConstructor;
@@ -9,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Classe ResponseDto permettant la communication avec le front.
+ * Classe {@code ResponseDto} permettant la communication avec le front.
  * 
  * @author Maxime Rembert
  *

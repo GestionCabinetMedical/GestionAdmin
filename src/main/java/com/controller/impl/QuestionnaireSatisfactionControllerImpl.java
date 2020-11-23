@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * @author Pauline Humbert
  * 
- * Classe controller de QuestionnaireSatisfaction implémente des méthodes spéciales à cette entité. 
+ * Classe controller {@code QuestionnaireSatisfactionControllerImpl} spécifique de {@link QuestionnaireSatisfactionControllerImpl}.
  * Elle étend de {@code DaoControllerImpl}.
  * @see DaoControllerImpl
  *

@@ -14,8 +14,8 @@ import lombok.ToString;
 /**
  * @author Pauline Humbert
  * 
- * Classe MedecinDto permettant de récupérer les informations de l'entité médecin
- * qui se trouve dans le microService de GestiondeRdv
+ * Classe {@code MedecinDto} permettant de récupérer les informations de l'entité médecin
+ * qui se trouve dans le microService {@code GestiondeRdv} 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"id", "nom", "prenom", "idFormule", "adresseCabinet", "specialite", "identifiant", "motDePasse"})

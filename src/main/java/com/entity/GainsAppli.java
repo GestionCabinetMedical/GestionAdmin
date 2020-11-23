@@ -14,7 +14,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Classe de l'entité GainsAppli
+ * Classe de l'entité {@code GainsAppli} qui implémente {@code Serializable}.
  * @see Serializable
  * @author Maxime Rembert
  *

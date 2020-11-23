@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 /**
  * @author Pauline Humbert
  *
- * Classe de l'entité GainsMedecin pour les gains des médecins
+ * Classe de l'entité {@code GainsMedecin} qui implémente {@code Serializable}.
  * @see Serializable
  */
 @Data

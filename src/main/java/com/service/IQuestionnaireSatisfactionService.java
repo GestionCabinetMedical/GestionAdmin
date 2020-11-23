@@ -8,7 +8,7 @@ import com.entity.QuestionnaireSatisfaction;
 /**
  * @author Pauline Humbert
  * 
- * Interface service de QuestionnaireSatisfaction responsable des méthodes spécifiques à QuestionnaireSatisfaction.
+ * Interface service {@code IQuestionnaireSatisfactionService} spécifique de {@link QuestionnaireSatisfaction}.
  * Elle étend de {@code IDaoService}
  * @see IDaoService
  *
