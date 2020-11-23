@@ -16,7 +16,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Classe entité de Formule.
+ * Classe entité de {@code Formule} qui implémente {@code Serializable}.
+ * @see Serializable
  * @author Maxime Rembert
  *
  */
@@ -28,15 +29,16 @@ public class Formule implements Serializable{
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column(name="ID_FORMULE", unique = true, nullable = false)
 	private Long id;
-	@Column
+	@Column(name="TAXE", unique = false, nullable = false)
 	private float taxe;
-	@Column
+	@Column(name="PRIX_CONSULTATION", unique = false, nullable = false)
 	private float prixConsultation;
-	@Column
+	@Column(name="FRAIS_SERVICE", unique = false, nullable = false)
 	private float fraisService;
-	@Column
+	@Column(name="PRIXTTC", unique = false, nullable = false)
 	private float prixTtc;
-	@Column
+	@Column(name="SPECIALITE", unique = false, nullable = false)
 	private String specialite;
 }

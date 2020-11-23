@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.repo;
 
 import org.springframework.stereotype.Repository;
@@ -8,7 +5,9 @@ import org.springframework.stereotype.Repository;
 import com.entity.Formule;
 
 /**
- * Interface repository de la classe Formule. Elle étend IDaoRepo.
+ * Interface repository {@code IFormuleRepo} spécifique de {@link Formule}. 
+ * Elle étend {@code IDaoRepo}.
+ * @see IDaoRepo
  * 
  * @author Maxime Rembert
  *

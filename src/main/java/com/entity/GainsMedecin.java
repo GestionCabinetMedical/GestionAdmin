@@ -14,24 +14,26 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Classe de l'entité {@code GainsAppli} qui implémente {@code Serializable}.
- * @see Serializable
- * @author Maxime Rembert
+ * @author Pauline Humbert
  *
+ * Classe de l'entité {@code GainsMedecin} qui implémente {@code Serializable}.
+ * @see Serializable
  */
-@Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class GainsAppli implements Serializable {
+@NoArgsConstructor
+@Entity
+public class GainsMedecin implements Serializable{
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column(name="ID_GAINS_APPLI", unique = true, nullable = false)
-	private Long id;
-	@Column(name="GAIN", unique = false, nullable = false)
-	private float gain;
+	@Column(name="ID_GAINS_MEDECIN", unique = true, nullable = false)
+	private Long idGainsMedecin;
+	@Column(name="GAINS", unique = false, nullable = true)
+	private float gains;
 	@Column(name="DATE", unique = true, nullable = false)
 	private Date date;
+	@Column(name="ID_MEDECIN", unique = true, nullable = true)
+	private Long idMedecin;
 
 }
