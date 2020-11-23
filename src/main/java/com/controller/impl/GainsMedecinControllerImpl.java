@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.controller.impl;
 
 import java.util.Date;
@@ -12,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.controller.IGainsMedecinController;
 import com.dto.ResponseDto;
 import com.entity.GainsMedecin;
 import com.exception.notfound.FormuleNotFoundException;
@@ -34,7 +30,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping(path="/gainsMedecin")
 @Slf4j
-public class GainsMedecinControllerImpl extends DaoControllerImpl<GainsMedecin> implements IGainsMedecinController{
+public class GainsMedecinControllerImpl extends DaoControllerImpl<GainsMedecin>{
 	
 	// ATTRIBUTS 
 	
@@ -43,7 +39,14 @@ public class GainsMedecinControllerImpl extends DaoControllerImpl<GainsMedecin> 
 	
 	// METHODES
 	
-	@Override	
+	/**
+	 * Méthdoe permettant la recherche des gains d'un par date et par medecin.
+	 * 
+	 * @param date Date du gains recherché.
+	 * @param idMedecin Long du médecin dont on recherche les gains
+	 * @return Un responseDto composé d'un booleen error, un body (=entite) et d'un status http (200 ou 400).
+	 * @throws GainsMedecinNotFoundException 
+	 */
 	@GetMapping (path="/date")
 	public ResponseDto<GainsMedecin> findByDateAndIdMedecin(@RequestParam Date date, @RequestParam Long idMedecin) throws GainsMedecinNotFoundException {
 		// TODO Auto-generated method stub
@@ -51,7 +54,16 @@ public class GainsMedecinControllerImpl extends DaoControllerImpl<GainsMedecin> 
 		return makeDtoResponse(gainsMedecinService.findByDateAndIdMedecin(date, idMedecin));
 	}
 
-	@Override
+	/**
+	 * Méthdoe permettant le calcul des gains d'un medecin après une consultation pour une journée (date du jour).
+	 * 
+	 * @param idMedecin Long du médecin dont on souhaite calculer les gains
+	 * @return Un responseDto composé d'un booleen error, un body (=entite) et d'un status http (200 ou 400).
+	 * @throws GainsMedecinNotSuccessException 
+	 * @throws FormuleNotFoundException 
+	 * @throws MedecinDtoNotFoundException 
+	 * @throws GainsMedecinNotFoundException 
+	 */
 	@PostMapping (path="/ajoutGainsMedecin")
 	public ResponseDto<GainsMedecin> calculGainsMedecin(@RequestParam Long idMedecin) throws GainsMedecinNotFoundException, MedecinDtoNotFoundException, FormuleNotFoundException, GainsMedecinNotSuccessException {
 		// TODO Auto-generated method stub
