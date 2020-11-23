@@ -55,11 +55,10 @@ public interface IDaoController<E> {
 	public ResponseDto<E> findById(Long id) throws DaoNotFoundException;
 
 	/**
-	 * Méthode permettant la recherche de toutesles entités.
+	 * Méthode permettant la recherche de toutes les entités.
 	 * 
 	 * @return Une liste d'entité (peut être vide).
 	 * @throws DaoNotFoundException 
 	 */
 	public ResponseDto<List<E>> findAll() throws DaoNotFoundException;
-
 }
