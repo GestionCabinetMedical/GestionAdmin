@@ -16,6 +16,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
+ * Classe entité de {@code QuestionReponse} qui implémente {@code Serializable}.
+ * 
+ * @see Serializable
  * @author Maxime Rembert
  *
  */
@@ -23,16 +26,15 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class QuestionReponse implements Serializable{
-	
+public class QuestionReponse implements Serializable {
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column (name="ID_QUESTION")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID_QUESTION")
 	private Long idQuestion;
-	@Column (name="QUESTION",nullable = false)
+	@Column(name = "QUESTION", nullable = false)
 	private String question;
-	@Column (name="REPONSE",nullable = false)
+	@Column(name = "REPONSE", nullable = false)
 	private String reponse;
-	
 
 }
