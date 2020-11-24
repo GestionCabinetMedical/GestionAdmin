@@ -18,7 +18,7 @@ import com.exception.notfound.MedecinDtoNotFoundException;
  * @author Maxime Rembert
  *
  */
-@FeignClient(name = "gestion-rdv",contextId = "medecinController")
+@FeignClient(name = "gestion-rdv")
 @RibbonClient(name = "gestion-rdv")
 public interface IMedecinConsommateur {
 	

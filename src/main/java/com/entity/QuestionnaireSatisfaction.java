@@ -39,6 +39,6 @@ public class QuestionnaireSatisfaction implements Serializable{
 	@Column(name="ID_CONSULTATION", unique = false, nullable = false)
 	private Long idConsultation;
 	@OneToMany
-	@JoinColumn (name="FK_QUESTION", referencedColumnName = "ID_QUESTIONNAIRE")
+	@JoinColumn (name="FK_QUESTIONNAIRE", referencedColumnName = "ID_QUESTIONNAIRE")
 	private List<QuestionReponse> listeQuestions;
 }

@@ -32,7 +32,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Service
 @Slf4j
-public class QuestionnaireSatisfactionServiceImpl implements IQuestionnaireSatisfactionService {
+public class QuestionnaireSatisfactionServiceImpl  implements IQuestionnaireSatisfactionService {
 
 	@Autowired
 	private IQuestionnaireSatisfactionRepo repo;
@@ -51,9 +51,7 @@ public class QuestionnaireSatisfactionServiceImpl implements IQuestionnaireSatis
 				repo.save(entite);
 				// sauvegarde de l'ensemble des questions
 				for (QuestionReponse e : entite.getListeQuestions()) {
-					System.out.println("**************************************");
 					System.out.println(e.getIdQuestion());
-					System.out.println("**************************************");
 					itemRepo.save(e);
 				}
 				return entite;
@@ -72,7 +70,7 @@ public class QuestionnaireSatisfactionServiceImpl implements IQuestionnaireSatis
 		log.info("Questionnaire service : méthdoe delete by id appelée");
 		try {
 			if (id != null && repo.existsById(id)) {
-				log.info("Id non null et existant dans la base de donnée");
+				log.info("Appel repo OK");
 				QuestionnaireSatisfaction entite = repo.findById(id).orElse(null);
 				repo.deleteById(id);
 				for (QuestionReponse e : entite.getListeQuestions()) {
@@ -81,8 +79,8 @@ public class QuestionnaireSatisfactionServiceImpl implements IQuestionnaireSatis
 				return true;
 			}
 			
-			log.warn("Erreur méthode delete By id: id null");
-			throw new DaoNotDeleteException("DeleteById n'a pas pu delete l'élément dans la BD: id = null");
+			log.warn("Erreur méthode delete By id: id null ou inexistant dans DB");
+			throw new DaoNotDeleteException("DeleteById n'a pas pu delete l'élément dans la BD: id = null ou inexistant dans DB");
 			
 		} catch (DaoNotDeleteException dnde) {
 			dnde.printStackTrace();
@@ -127,5 +125,6 @@ public class QuestionnaireSatisfactionServiceImpl implements IQuestionnaireSatis
 		}
 		return null;
 	}
+
 
 }
