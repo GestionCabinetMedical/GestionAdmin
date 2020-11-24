@@ -39,4 +39,7 @@ public interface IGainsMedecinService extends IDaoService<GainsMedecin>{
 	 */
 	public GainsMedecin calculGainsMedecin(Long idMedecin) throws GainsMedecinNotFoundException, MedecinDtoNotFoundException, FormuleNotFoundException, GainsMedecinNotSuccessException;
 
+	public void findMedecinById(Long id) throws MedecinDtoNotFoundException;
+	
+	public void findAllMedecin();
 }

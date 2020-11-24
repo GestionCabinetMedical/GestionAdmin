@@ -4,6 +4,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.consommateur_rest.FixConsommateur;
 import com.consommateur_rest.IMedecinConsommateur;
 import com.dto.MedecinDto;
 import com.entity.Formule;
@@ -37,8 +38,8 @@ public class GainsMedecinServiceImpl extends DaoServiceImpl<GainsMedecin> implem
 	@Autowired
 	private IGainsMedecinRepo gainMedecinRepo;
 
-//	@Autowired
-	private IMedecinConsommateur medecinConsommateur;
+	@Autowired
+	private FixConsommateur fixConsommateur;
 
 	@Autowired
 	private IFormuleRepo formuleRepo;
@@ -78,7 +79,7 @@ public class GainsMedecinServiceImpl extends DaoServiceImpl<GainsMedecin> implem
 		try {
 			if (idMedecin != null) {
 				GainsMedecin gainsMedecin = this.findByDateAndIdMedecin(dateToday, idMedecin);
-				MedecinDto medecinDtoTofind = medecinConsommateur.findMedecinById(idMedecin);
+				MedecinDto medecinDtoTofind = fixConsommateur.findMedecinById(idMedecin).getBody();
 				if (medecinDtoTofind == null) {
 					log.warn("Erreur calculGainsMedecin : medecinDtoTofind=null");
 					throw new MedecinDtoNotFoundException("MedecinDto pas trouvé (=null)");
@@ -112,5 +113,19 @@ public class GainsMedecinServiceImpl extends DaoServiceImpl<GainsMedecin> implem
 		}
 		return null;
 	}
+
+	@Override
+	public void findMedecinById(Long id) throws MedecinDtoNotFoundException {
+		System.out.println(fixConsommateur.findMedecinById(id));
+		
+	}
+
+	@Override
+	public void findAllMedecin() {
+		System.out.println(fixConsommateur.findAll());
+		
+	}
+	
+	
 
 }

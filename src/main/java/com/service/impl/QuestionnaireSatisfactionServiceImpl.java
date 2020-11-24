@@ -32,7 +32,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Service
 @Slf4j
-public class QuestionnaireSatisfactionServiceImpl  implements IQuestionnaireSatisfactionService {
+public class QuestionnaireSatisfactionServiceImpl extends DaoServiceImpl<QuestionnaireSatisfaction> implements IQuestionnaireSatisfactionService {
 
 	@Autowired
 	private IQuestionnaireSatisfactionRepo repo;
