@@ -33,23 +33,23 @@ public class GestionAdminApplication {
 	 * @param GainsMedecinServiceImpl gainsMedecinImpl
 	 * @return affiche tous les éléments dans la bases de données concernant les gains Medecins après création des intances de gains medecins
 	 */
-	@Bean
-	CommandLineRunner start(GainsMedecinServiceImpl gainsMedecinService)
-	{
-		return (args) -> {
-			
-			Stream.of(new GainsMedecin(1L, 400, Date.valueOf("2020-05-03"), 1L),
-					new GainsMedecin(2L, 1000, Date.valueOf("2020-05-04"), 2L))
-					.forEach((gains) -> {
-						try {
-							gainsMedecinService.addOrUpdate(gains);
-						} catch (DaoNotModifyException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					});
-			gainsMedecinService.findAll().forEach(System.out::println);
-		};
-	}
+//	@Bean
+//	CommandLineRunner start(GainsMedecinServiceImpl gainsMedecinService)
+//	{
+//		return (args) -> {
+//			
+//			Stream.of(new GainsMedecin(1L, 400, Date.valueOf("2020-05-03"), 1L),
+//					new GainsMedecin(2L, 1000, Date.valueOf("2020-05-04"), 2L))
+//					.forEach((gains) -> {
+//						try {
+//							gainsMedecinService.addOrUpdate(gains);
+//						} catch (DaoNotModifyException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//					});
+//			gainsMedecinService.findAll().forEach(System.out::println);
+//		};
+//	}
 	
 }

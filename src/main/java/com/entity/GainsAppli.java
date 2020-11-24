@@ -27,11 +27,10 @@ public class GainsAppli implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column(name="ID_GAINS_APPLI", unique = true, nullable = false)
 	private Long id;
-	@Column(name="GAIN", unique = false, nullable = false)
+	@Column(name="GAIN", nullable = false)
 	private float gain;
-	@Column(name="DATE", unique = true, nullable = false)
+	@Column(name="DATE", nullable = false)
 	private Date date;
 
 }
