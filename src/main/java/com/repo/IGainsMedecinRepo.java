@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.stereotype.Repository;
 
 import com.entity.GainsMedecin;
+import com.exception.notfound.GainsMedecinNotFoundException;
 
 /**
  * @author Pauline Humbert
@@ -22,7 +23,8 @@ public interface IGainsMedecinRepo extends IDaoRepo<GainsMedecin>{
 	 * @param date Date du gains recherché.
 	 * @param idMedecin Long du médecin dont on recherche les gains
 	 * @return Une entité GainsMedecin.
+	 * @throws GainsMedecinNotFoundException
 	 */
-	public GainsMedecin findByDateAndIdMedecin(Date date, Long idMedecin);
+	public GainsMedecin findByDateAndIdMedecin(Date date, Long idMedecin) throws GainsMedecinNotFoundException;
 
 }

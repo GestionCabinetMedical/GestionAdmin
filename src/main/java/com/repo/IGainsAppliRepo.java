@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.stereotype.Repository;
 
 import com.entity.GainsAppli;
+import com.exception.notfound.GainsAppliNotFoundException;
 
 /**
  * Interface repository {@code IGainsAppliRepo} spécifique de {@link GainsAppli}. 
@@ -22,7 +23,8 @@ public interface IGainsAppliRepo extends IDaoRepo<GainsAppli> {
 	 * 
 	 * @param date Date du gains recherché.
 	 * @return Une entité GainsAppli.
+	 * @throws GainsAppliNotFoundException
 	 */
-	public GainsAppli findByDate(Date date);
+	public GainsAppli findByDate(Date date) throws GainsAppliNotFoundException;
 
 }

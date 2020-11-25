@@ -3,6 +3,7 @@ package com.repo;
 import org.springframework.stereotype.Repository;
 
 import com.entity.Formule;
+import com.exception.notfound.FormuleNotFoundException;
 
 /**
  * Interface repository {@code IFormuleRepo} spécifique de {@link Formule}. 
@@ -20,6 +21,7 @@ public interface IFormuleRepo extends IDaoRepo<Formule> {
 	 * 
 	 * @param specialite Specialite du medecin.
 	 * @return Une entité Formule.
+	 * @throws FormuleNotFoundException
 	 */
-	public Formule findBySpecialite(String specialite);
+	public Formule findBySpecialite(String specialite) throws FormuleNotFoundException;
 }
