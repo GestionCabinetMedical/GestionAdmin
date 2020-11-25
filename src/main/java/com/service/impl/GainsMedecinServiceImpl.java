@@ -113,6 +113,9 @@ public class GainsMedecinServiceImpl extends DaoServiceImpl<GainsMedecin> implem
 		}
 		return null;
 	}
+	
+	
+	// METHODES POUR TESTER LA COMMUNICATION DIRECT ENTRE MICROSERVICES 
 
 	@Override
 	public void findMedecinById(Long id) throws MedecinDtoNotFoundException {
