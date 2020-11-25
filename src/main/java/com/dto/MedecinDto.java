@@ -1,7 +1,6 @@
-/**
- * 
- */
 package com.dto;
+
+import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -18,14 +17,14 @@ import lombok.ToString;
  * qui se trouve dans le microService {@code GestiondeRdv} 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({"id", "nom", "prenom", "idFormule", "adresseCabinet", "specialite", "identifiant", "motDePasse"})
+@JsonPropertyOrder({"idMedecin", "nom", "prenom", "idFormule", "adresseCabinet", "specialite", "identifiant", "motDePasse"})
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class MedecinDto {
+public class MedecinDto implements Serializable{
 
 	@JsonProperty("idMedecin")
-	private Long idMedecin;
+	private Long id;
 	@JsonProperty("nom")
 	private String nom;
 	@JsonProperty("prenom")
@@ -42,13 +41,13 @@ public class MedecinDto {
 	private String motDePasse;
 
 	@JsonProperty("idMedecin")
-	public Long getIdMedecin() {
-		return idMedecin;
+	public Long getId() {
+		return id;
 	}
 
 	@JsonProperty("idMedecin")
-	public void setIdMedecin(Long idMedecin) {
-		this.idMedecin = idMedecin;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	@JsonProperty("nom")

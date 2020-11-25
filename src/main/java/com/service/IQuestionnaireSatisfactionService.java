@@ -14,5 +14,5 @@ import com.entity.QuestionnaireSatisfaction;
  *
  */
 public interface IQuestionnaireSatisfactionService extends IDaoService<QuestionnaireSatisfaction>{
-
+	
 }

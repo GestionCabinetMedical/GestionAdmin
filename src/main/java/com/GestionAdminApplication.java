@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 import com.entity.GainsMedecin;
@@ -20,6 +21,7 @@ import com.service.impl.GainsMedecinServiceImpl;
  *
  */
 @EnableDiscoveryClient
+@EnableFeignClients
 @SpringBootApplication
 public class GestionAdminApplication {
 
@@ -47,6 +49,11 @@ public class GestionAdminApplication {
 						}
 					});
 			gainsMedecinService.findAll().forEach(System.out::println);
+			
+			/// TEST DES METHODES POUR SAVOIR SI LES 2 MICROSERVICES FONCTIONNENT
+//			gainsMedecinService.findMedecinById((long)1);
+			gainsMedecinService.findAllMedecin();
+			
 		};
 	}
 	

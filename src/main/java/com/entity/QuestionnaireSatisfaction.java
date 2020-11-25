@@ -4,13 +4,15 @@
 package com.entity;
 
 import java.io.Serializable;
-import java.util.Map;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,12 +32,13 @@ public class QuestionnaireSatisfaction implements Serializable{
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column(name="ID_QUESTIONNAIRE", unique = true, nullable = false)
+	@Column(name="ID_QUESTIONNAIRE")
 	private Long idQuestionnaire;
-	@Column(name="QUESTION_REPONSES", unique = false, nullable = false)
-	private Map<String, String> questionsReponses;
 	@Column(name="ID_PATIENT", unique = false, nullable = false)
 	private Long idPatient;
 	@Column(name="ID_CONSULTATION", unique = false, nullable = false)
 	private Long idConsultation;
+	@OneToMany
+	@JoinColumn (name="FK_QUESTIONNAIRE", referencedColumnName = "ID_QUESTIONNAIRE")
+	private List<QuestionReponse> listeQuestions;
 }

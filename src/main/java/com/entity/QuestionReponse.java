@@ -1,7 +1,9 @@
+/**
+ * 
+ */
 package com.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,7 +16,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Classe de l'entité {@code GainsAppli} qui implémente {@code Serializable}.
+ * Classe entité de {@code QuestionReponse} qui implémente {@code Serializable}.
+ * 
  * @see Serializable
  * @author Maxime Rembert
  *
@@ -23,14 +26,15 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class GainsAppli implements Serializable {
-	
+public class QuestionReponse implements Serializable {
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private Long id;
-	@Column(name="GAIN", nullable = false)
-	private float gain;
-	@Column(name="DATE", nullable = false)
-	private Date date;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID_QUESTION")
+	private Long idQuestion;
+	@Column(name = "QUESTION", nullable = false)
+	private String question;
+	@Column(name = "REPONSE", nullable = false)
+	private String reponse;
 
 }
