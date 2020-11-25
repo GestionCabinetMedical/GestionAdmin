@@ -6,7 +6,7 @@ package com.config;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.repository.NoRepositoryBean;
 
-import brave.sampler.Sampler;
+//import brave.sampler.Sampler;
 
 /**
  * Classe de configuration pour Spring Sleuth.
@@ -14,11 +14,11 @@ import brave.sampler.Sampler;
  * @author Maxime Rembert
  *
  */
-@Configuration
+//@Configuration
 public class SpringSleuthConfig {
 
-	Sampler startEmpr() {
-		return Sampler.ALWAYS_SAMPLE;
-	}
+//	Sampler startEmpr() {
+//		return Sampler.ALWAYS_SAMPLE;
+//	}
 
 }

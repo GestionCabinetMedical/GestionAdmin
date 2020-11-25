@@ -51,7 +51,6 @@ public class QuestionnaireSatisfactionServiceImpl  implements IQuestionnaireSati
 				repo.save(entite);
 				// sauvegarde de l'ensemble des questions
 				for (QuestionReponse e : entite.getListeQuestions()) {
-					System.out.println(e.getIdQuestion());
 					itemRepo.save(e);
 				}
 				return entite;

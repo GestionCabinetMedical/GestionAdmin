@@ -6,6 +6,7 @@ package com.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,11 +35,13 @@ public class QuestionnaireSatisfaction implements Serializable{
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="ID_QUESTIONNAIRE")
 	private Long idQuestionnaire;
-	@Column(name="ID_PATIENT", unique = false, nullable = false)
+	@Column(name="ID_PATIENT",nullable = true)
 	private Long idPatient;
-	@Column(name="ID_CONSULTATION", unique = false, nullable = false)
+	@Column(name="ID_CONSULTATION",nullable = true)
 	private Long idConsultation;
-	@OneToMany
-	@JoinColumn (name="FK_QUESTIONNAIRE", referencedColumnName = "ID_QUESTIONNAIRE")
+	@Column (name = "NOM_QUESTIONNAIRE", unique = true, nullable = false)
+	private String nomQuestionnaire;
+	@OneToMany (cascade = CascadeType.ALL)
+	@JoinColumn (name="FK_QUESTIONNAIRE", referencedColumnName = "ID_QUESTIONNAIRE", nullable = false)
 	private List<QuestionReponse> listeQuestions;
 }
