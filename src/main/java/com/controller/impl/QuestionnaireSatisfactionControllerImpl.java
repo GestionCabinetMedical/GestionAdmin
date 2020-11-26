@@ -83,6 +83,18 @@ public class QuestionnaireSatisfactionControllerImpl  implements IQuestionnaireS
 		return makeListResponse(listeEntity);
 	}
 	
+	@GetMapping (path="/allToFill")
+	public ResponseDto<List<QuestionnaireSatisfaction>> findAllToFill()throws DaoNotFoundException {
+		log.info("Controller questionnaire satisfaction : méthode find all to fill appelée !");
+		return makeListResponse(serv.findAllARemplir());
+	}
+	
+	@GetMapping (path="/allComplete")
+	public ResponseDto<List<QuestionnaireSatisfaction>> findAllComplete()throws DaoNotFoundException {
+		log.info("Controller questionnaire satisfaction : méthode find all complete appelée !");
+		return makeListResponse(serv.findAllComplete());
+	}
+	
 	public ResponseDto<QuestionnaireSatisfaction> makeDtoResponse(QuestionnaireSatisfaction e) {
 		ResponseDto<QuestionnaireSatisfaction> resp = new ResponseDto<>();
 		if (e != null) {
@@ -132,6 +144,8 @@ public class QuestionnaireSatisfactionControllerImpl  implements IQuestionnaireS
 		}
 		return resp;
 	}
+	
+	
 
 
 }

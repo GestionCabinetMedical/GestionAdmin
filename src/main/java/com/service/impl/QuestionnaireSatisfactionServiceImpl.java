@@ -4,6 +4,8 @@
 package com.service.impl;
 
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,13 +50,13 @@ public class QuestionnaireSatisfactionServiceImpl extends DaoServiceImpl<Questio
 			if (entite != null) {
 				log.info("Questionnaire non null, appel repo methode save OK !");
 				// sauvegarde du questionnaire
-				repo.save(entite);
+				
 				// sauvegarde de l'ensemble des questions
 				for (QuestionReponse e : entite.getListeQuestions()) {
 					System.out.println(e.getIdQuestion());
 					itemRepo.save(e);
 				}
-				return entite;
+				return repo.save(entite);
 			}
 			log.warn("Erreur méthode add or update: entite null");
 			throw new DaoNotModifyException("AddOrUpdate n'a pas pu modifier la BD: entité = null");
@@ -125,6 +127,44 @@ public class QuestionnaireSatisfactionServiceImpl extends DaoServiceImpl<Questio
 		}
 		return null;
 	}
+
+	@Override
+	public List<QuestionnaireSatisfaction> findAllARemplir()throws DaoNotFoundException {
+		try {
+			if (repo.findAll() != null) {
+				log.info("Questionnaire service : méthode find All a remplir appelée ");
+				log.info("Appel repo OK");
+				return repo.findAll().stream().filter(x -> x.isStatus() == false).collect(Collectors.toList());
+			}
+			else {
+				throw new DaoNotFoundException("FindAll a remplir n'a pas pu find tous les éléments dans la BD");
+			}
+		} catch (DaoNotFoundException dnfe) {
+			dnfe.printStackTrace();
+			dnfe.getMessage();
+		}
+		return null;
+	}
+
+	@Override
+	public List<QuestionnaireSatisfaction> findAllComplete() throws DaoNotFoundException{
+		try {
+			if (repo.findAll() != null) {
+				log.info("Questionnaire service : méthode find All complete appelée ");
+				log.info("Appel repo OK");
+				return repo.findAll().stream().filter(x -> x.isStatus() == true).collect(Collectors.toList());
+			}
+			else {
+				throw new DaoNotFoundException("FindAll complete n'a pas pu find tous les éléments dans la BD");
+			}
+		} catch (DaoNotFoundException dnfe) {
+			dnfe.printStackTrace();
+			dnfe.getMessage();
+		}
+		return null;
+	}
+	
+	
 
 
 }

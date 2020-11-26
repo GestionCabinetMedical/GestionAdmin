@@ -34,7 +34,7 @@ public class QuestionReponse implements Serializable {
 	private Long idQuestion;
 	@Column(name = "QUESTION", nullable = false)
 	private String question;
-	@Column(name = "REPONSE", nullable = false)
+	@Column(name = "REPONSE", nullable = true)
 	private String reponse;
 
 }
