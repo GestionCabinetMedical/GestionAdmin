@@ -22,6 +22,13 @@ import com.exception.notfound.MedecinDtoNotFoundException;
 @RibbonClient(name = "gestion-rdv")
 public interface IMedecinConsommateur {
 	
+	/** 
+	 * Méthdoe permettant la recherche d'un medecin par l'id de médecin.
+	 *  
+	 * @param id Long (pathVariable => id dans url)
+	 * @return ResponseDto<MedecinDto>
+	 * @throws MedecinDtoNotFoundException
+	 */
 	@GetMapping(value="/medecin/{id}")
 	ResponseDto<MedecinDto> findMedecinById(@PathVariable("id") Long id) throws MedecinDtoNotFoundException;
 	

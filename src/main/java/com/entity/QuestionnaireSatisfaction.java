@@ -34,11 +34,16 @@ public class QuestionnaireSatisfaction implements Serializable{
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="ID_QUESTIONNAIRE")
 	private Long idQuestionnaire;
-	@Column(name="ID_PATIENT", unique = false, nullable = false)
+	@Column(name="ID_PATIENT", unique = false, nullable = true)
 	private Long idPatient;
-	@Column(name="ID_CONSULTATION", unique = false, nullable = false)
+	@Column(name="ID_CONSULTATION", unique = false, nullable = true)
 	private Long idConsultation;
 	@OneToMany
 	@JoinColumn (name="FK_QUESTIONNAIRE", referencedColumnName = "ID_QUESTIONNAIRE")
 	private List<QuestionReponse> listeQuestions;
+	@Column (name="STATUS", nullable = false)
+	private boolean status;
+	@Column(name="NOM_QUESTIONNAIRE", nullable = false)
+	private String nomQuestionnaire;
+	
 }
