@@ -14,7 +14,37 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>GestionAdmin</name>
 	<description>Demo project for Spring Boot</description>
-
+	<developers>
+		<developer>
+			<name> Pauline Humbert </name>
+			<organization>ADAMING</organization>
+			<roles>
+				<role> Réferent technique </role>
+				<role> Développeur </role>
+			</roles>
+		</developer>
+		<developer>
+			<name> Sophie Lahmar </name>
+			<organization>ADAMING</organization>
+			<roles>
+				<role> Développeur </role>
+			</roles>
+		</developer>
+		<developer>
+			<name> Jonathan Rachwal</name>
+			<organization>ADAMING</organization>
+			<roles>
+				<role> Développeur </role>
+			</roles>
+		</developer>
+		<developer>
+			<name> Maxime Rembert </name>
+			<organization>ADAMING</organization>
+			<roles>
+				<role> Réferent technique </role>
+				<role> Développeur </role>
+			</roles>
+		</developer>
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>
